@@ -164,6 +164,11 @@
         var g = rg[1]
         var b = ba[0]
         var a = ba[1]
+
+        r += (a & 64) << 1
+        g += (a & 32) << 2
+        b += (a & 16) << 3
+        a = (a & 8) ? 255 : 0
         
         ctx.beginPath()
         ctx.rect(i * PIXEL_SCALE / 2, lineIndex * PIXEL_SCALE, PIXEL_SCALE, PIXEL_SCALE)
